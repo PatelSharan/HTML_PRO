@@ -4,18 +4,16 @@
   "main": "src/index.html",
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify",
-    "watch-tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "watch-tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
     "bootstrap-icons": "^1.13.1",
     "flowbite": "^4.0.1",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.17"
-  },
-  "devDependencies": {
-    "@tailwindcss/cli": "^4.1.17"
   }
 }

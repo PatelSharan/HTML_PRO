@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+@plugin 'tailwind-scrollbar';
+
+
+@source "../node_modules/flowbite";
+
+:root {
+    --nav-height: 69.3333px;
+    --header-height: 122.656px;
+    --asidebar-width: 224px;
+}
+
+@theme {
+    --color-theme-primary-bgColor: #37f5f9;
+    --color-theme-secondry-bgColor: #37f5f9;
+
+    --color-theme-text: #20204e;
+
+    --color-dark-website-bgColor: #131340;
+
+    --color-dark-1: #20204e;
+    --color-dark-2: #272760;
+
+    --color-dark-website-text: #ffffff;
+}
+
+@layer components {
+
+    body {
+        @apply bg-dark-website-bgColor text-dark-website-text
+    }
+
+    .pageContainer {
+        @apply px-1.5 lg:ml-(--asidebar-width)
+    }
+
+    .themeBg {
+        @apply bg-theme-primary-bgColor text-theme-text;
+    }
+
+    .backTheme {
+        background: transparent;
+        color: #00b2ff;
+        border-width: 1.5px;
+        border-color: #00b2ff;
+    }
+
+    .layTheme {
+        background: transparent;
+        color: #ff9bd4;
+        border-width: 1.5px;
+        border-color: #ff9bd4;
+    }
+
+    .btnTheme {
+        @apply bg-theme-primary-bgColor text-theme-text hover:bg-theme-primary-bgColor/90 px-3 py-1 rounded-xs cursor-pointer
+    }
+
+    .borderColor {
+        @apply border-gray-300 dark:border-gray-700
+    }
+
+    .divideColor {
+        @apply divide-gray-300 dark:divide-gray-700
+    }
+
+
+    @keyframes animateText {
+        0% {
+            color: red;
+        }
+
+        100% {
+            color: green;
+        }
+    }
+
+    .animateText {
+        animation: animateText 1s linear infinite alternate;
+    }
+}

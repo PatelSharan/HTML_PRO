@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.html",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify",
     "watch-tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
   },
   "author": "",

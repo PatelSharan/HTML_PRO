@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header class="flex flex-col">
+        <nav
+            class="bg-dark-website-bgColor text-dark-website-text fixed w-full z-20 top-0 start-0 border-b border-theme-primary-bgColor">
+            <div class="flex flex-wrap items-center justify-between mx-auto p-4 w-full">
+                <div class="flex space-x-4">
+                    <button data-collapse-toggle="navbar-solid" type="button"
+                        class="inline-flex items-center w-7 h-7 justify-center text-sm rounded-base hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none cursor-pointer"
+                        aria-controls="navbar-solid" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                d="M5 7h14M5 12h14M5 17h14" />
+                        </svg>
+                    </button>
+                    <a href="gameList.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <span class="self-center text-xl text-dark-website-text font-semibold whitespace-nowrap">
+                            BET365
+                        </span>
+                    </a>
+                </div>
+                <div class="flex space-x-2 relative">
+                    <div
+                        class="text-xs py-0.5 px-3 text rounded-xs cursor-pointer flex flex-col items-center justify-center border border-theme-primary-bgColor bg-linear-to-r from-theme-primary-bgColor/10 to-theme-primary-bgColor/30
+                        hover:from-theme-primary-bgColor/20 hover:to-theme-primary-bgColor/40  transition-all duration-300 ease-in-out whitespace-nowrap">
+                        <div>
+                            Exposure
+                        </div>
+                        <div class="font-bold text-green-500">
+                            1200
+                        </div>
+                    </div>
+                    <div class="text-xs py-0.5 px-3 text rounded-xs cursor-pointer flex flex-col items-center justify-center border border-theme-primary-bgColor bg-linear-to-r from-theme-primary-bgColor/10 to-theme-primary-bgColor/30
+                        hover:from-theme-primary-bgColor/20 hover:to-theme-primary-bgColor/40  transition-all duration-300 ease-in-out whitespace-nowrap"
+                        id="userDropdownButton" data-dropdown-toggle="userDropdown">
+                        <div>
+                            User
+                        </div>
+                        <div class="font-bold text-green-500">
+                            1000203
+                        </div>
+                    </div>
+
+                    <!-- <<=== MAIN = User Dropdown -->
+                    <div id="userDropdown"
+                        class="hidden z-50 absolute right-0 mt-2 w-56 bg-dark-2 rounded-sm shadow shadow-theme-primary-bgColor border border-theme-primary-bgColor p-2 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <a href="profile.html" class="flex items-center space-x-2">
+                                <div>
+                                    <img src="/src/assets/user1.png" alt="" class="w-10 h-10">
+                                </div>
+                                <div class="underline first-letter:uppercase cursor-pointer">
+                                    User
+                                </div>
+                            </a>
+                        </div>
+                        <div class="text-sm">
+                            <div
+                                class="bg-dark-website-bgColor px-3 py-1 rounded-md divide-y divide-theme-primary-bgColor/30">
+                                <div class="py-1 flex justify-between font-semibold">
+                                    <span>Chips </span>
+                                    <span class="text-green-500">
+                                        1000203
+                                    </span>
+                                </div>
+                                <div class="py-1 flex justify-between font-semibold">
+                                    <span>Pnl</span>
+                                    <span class="text-green-500">
+                                        13000
+                                    </span>
+                                </div>
+                                <div class="py-1 flex justify-between font-semibold">
+                                    <span>Exposure </span>
+                                    <span class="text-green-500">
+                                        1200
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="text-sm divide-y divide-theme-primary-bgColor/30">
+                            <li>
+                                <a href="acStatment.html"
+                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    <span>
+                                        <i class="bi bi-bank"></i>
+                                    </span>
+                                    <span>
+                                        Account Statment
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pnlStatment.html"
+                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    <span>
+                                        <i class="bi bi-journal-text"></i>
+                                    </span>
+                                    <span>
+                                        P/L Statment
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="editStack.html"
+                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    <span>
+                                        <i class="bi bi-layers"></i>
+                                    </span>
+                                    <span>
+                                        Edit Stack
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="changePassword.html"
+                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    <span>
+                                        <i class="bi bi-key"></i>
+                                    </span>
+                                    <span>
+                                        Change Password
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="rules.html"
+                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    <span>
+                                        <i class="bi bi-card-checklist"></i>
+                                    </span>
+                                    <span>
+                                        Rules
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden w-full px-3 py-2" id="navbar-solid">
+                <ul
+                    class="font-medium flex flex-col max-h-[60vh] overflow-y-scroll scrollbar-none divide-y divideColor">
+                    <li>
+                        <a href="gameList.html" class="block py-2 px-3 text-theme-primary-bgColor">Home</a>
+                    </li>
+                    <li>
+                        <a href="users.html"
+                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Users</a>
+                    </li>
+                    <li>
+                        <a href="betHistory.html"
+                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Bets</a>
+                    </li>
+                    <li>
+                        <a href="acGeneral.html"
+                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Account General</a>
+                    </li>
+                    <li>
+                        <a href="settlement.html"
+                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Settlement</a>
+                    </li>
+                </ul>
+                <div class="px-2 py-2">
+                    <button class="btnTheme">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mt-(--nav-height) px-1.5 py-2">
+            <ul class="flex space-x-2 overflow-x-scroll scrollbar-none">
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer transition-all duration-300 ease-in-out bg-theme-primary-bgColor text-theme-text whitespace-nowrap animateText">
+                    ✨ In-Play
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    🏏 Cricket
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    ⚽ Football
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor  transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    ⚾ Baseball
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor  transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    🎲 Casino
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor  transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    🏏 Cricket
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor  transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    ⚽ Football
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor  transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    ⚾ Baseball
+                </li>
+                <li
+                    class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer border border-theme-primary-bgColor  transition-all duration-300 ease-in-out hover:bg-theme-primary-bgColor hover:text-theme-text whitespace-nowrap">
+                    🎲 Casino
+                </li>
+
+            </ul>
+        </div>
+
+        <aside
+            class="hidden lg:block w-56 absolute z-10 mt-(--header-height) bg-dark-website-bgColor text-dark-website-text">
+            <div>
+                <ul class="px-1 py-2 space-y-2">
+                    <li class="">
+                        <button id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown"
+                            class="flex items-center justify-between py-1 px-2 font-medium cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text w-full md:border-0">
+                            <span>
+                                Cricket
+                            </span>
+                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 9-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                            <ul class="text-sm divide-y divideColor">
+                                <li>
+                                    <button id="ipl-mega-menu-full-dropdown-button"
+                                        data-collapse-toggle="ipl-mega-menu-full-dropdown"
+                                        class="flex items-center justify-between py-2 px-2 font-medium cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text w-full md:border-0">
+                                        <span>
+                                            IPL
+                                        </span>
+                                        <svg class="w-4 h-4 ms-1.5" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 9-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div id="ipl-mega-menu-full-dropdown" class="">
+                                        <ul
+                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Gujarat Titans V Chennai Super Kings
+                                            </li>
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Gujarat Titans V Chennai Super Kings
+                                            </li>
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Gujarat Titans V Chennai Super Kings
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li
+                                    class="py-2 px-2 cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text ">
+                                    South Africa V England123123 1123123123123
+                                </li>
+                                <li
+                                    class="py-2 px-2 cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text">
+                                    India V England
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <button id="football-mega-menu-full-dropdown-button"
+                            data-collapse-toggle="football-mega-menu-full-dropdown"
+                            class="flex items-center justify-between py-1 px-2 font-medium cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text w-full md:border-0">
+                            <span>
+                                Football
+                            </span>
+                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 9-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="football-mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                            <ul class="text-sm divide-y divideColor">
+                                <li class="">
+                                    <button id="UEFA-mega-menu-full-dropdown-button"
+                                        data-collapse-toggle="UEFA-mega-menu-full-dropdown"
+                                        class="flex items-center justify-between py-2 px-2 font-medium cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text w-full md:border-0">
+                                        <span>
+                                            UEFA Europa League
+                                        </span>
+                                        <svg class="w-4 h-4 ms-1.5" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 9-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div id="UEFA-mega-menu-full-dropdown" class="bg">
+                                        <ul
+                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Abcd V Xyz
+                                            </li>
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Ijk V Mno
+                                            </li>
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Wxy V Hij
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li
+                                    class="py-2 px-2 cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text ">
+                                    Atalanta v Liverpool
+                                </li>
+                                <li
+                                    class="py-2 px-2 cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text">
+                                    Lille v Aston Villa
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <button id="baseball-mega-menu-full-dropdown-button"
+                            data-collapse-toggle="baseball-mega-menu-full-dropdown"
+                            class="flex items-center justify-between py-1 px-2 font-medium cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text w-full md:border-0">
+                            <span>
+                                Baseball
+                            </span>
+                            <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 9-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="baseball-mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                            <ul class="text-sm divide-y divideColor">
+                                <li class="">
+                                    <button id="bb-mega-menu-full-dropdown-button"
+                                        data-collapse-toggle="bb-mega-menu-full-dropdown"
+                                        class="flex items-center justify-between py-2 px-2 font-medium cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text w-full md:border-0">
+                                        <span>
+                                            BB League
+                                        </span>
+                                        <svg class="w-4 h-4 ms-1.5" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 9-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div id="bb-mega-menu-full-dropdown" class="bg">
+                                        <ul
+                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Abcd V Xyz
+                                            </li>
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Ijk V Mno
+                                            </li>
+                                            <li class="px-3 py-2 cursor-pointer">
+                                                Wxy V Hij
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li
+                                    class="py-2 px-2 cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text ">
+                                    Atalanta v Liverpool
+                                </li>
+                                <li
+                                    class="py-2 px-2 cursor-pointer hover:bg-theme-primary-bgColor hover:text-theme-text">
+                                    Lille v Aston Villa
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </header>
+
+    <div class="space-y-2 pageContainer">
+        <div class='first:mb-1 not-first:my-1 bg-dark-1'>
+            <div
+                class='bg-theme-primary-bgColor text-theme-text py-1.5 px-1 first-letter:uppercase flex items-center justify-between cursor-pointer font-medium'>
+                <span>
+                    Football Fancy
+                </span>
+                <span class='transition-transform ease-in-out duration-300 rotate-180'>
+                    <i class="bi bi-caret-down-fill"></i>
+                </span>
+            </div>
+            <div>
+                <div class='text-sm space-x-2 border-b borderColor p-1.5'>
+                    <span>
+                        Company reserves the right to suspend/void any id/bets if the same is found to be illegitimate.
+                        For example incase of vpn/robot-use/multiple entry from same IP/ multiple bets at same time
+                        (Punching) and others. Note : only winning bets will be voided...
+                    </span>
+                </div>
+                <div class='text-sm space-x-2 border-b borderColor p-1.5'>
+                    <span>
+                        Tournament Total Goals, Team Total Goals goals.scored in 90 minutes or in extra-time will
+                        count.Goals scored in penalty shootouts do not count.
+                    </span>
+                </div>
+                <div class='text-sm space-x-2 border-b borderColor p-1.5'>
+                    <span>
+                        Tournament Corners - Only corners taken in 90 minutes count.
+                    </span>
+                </div>
+                <div class='text-sm space-x-2 border-b borderColor p-1.5'>
+                    <span class="text-red-500">
+                        Tournament Penalties Missed/Converted - Penalties taken in 90 minutes, extra-time and penalty
+                        shootouts all count. If a penalty has to be re-taken the previous disallowed penalty(ies) do not
+                        count.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='first:mb-1 not-first:my-1 bg-dark-1'>
+            <div
+                class='bg-theme-primary-bgColor text-theme-text py-1.5 px-1 first-letter:uppercase flex items-center justify-between cursor-pointer font-medium'>
+                <span>
+                    Cricket Fancy
+                </span>
+                <span class='transition-transform ease-in-out duration-300'>
+                    <i class="bi bi-caret-down-fill"></i>
+                </span>
+            </div>
+        </div>
+        <div class='first:mb-1 not-first:my-1 bg-dark-1'>
+            <div
+                class='bg-theme-primary-bgColor text-theme-text py-1.5 px-1 first-letter:uppercase flex items-center justify-between cursor-pointer font-medium'>
+                <span>
+                    Big Bash League
+                </span>
+                <span class='transition-transform ease-in-out duration-300'>
+                    <i class="bi bi-caret-down-fill"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/flowbite@1.7.0/dist/flowbite.min.js"></script>
+</body>
+
+</html>

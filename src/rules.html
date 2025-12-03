@@ -11,9 +11,10 @@
 </head>
 
 <body>
+    <!-- <div id="header"></div> -->
     <header class="flex flex-col">
         <nav
-            class="bg-dark-website-bgColor text-dark-website-text fixed w-full z-20 top-0 start-0 border-b border-theme-primary-bgColor">
+            class="bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text fixed w-full z-20 top-0 start-0 border-b border-theme-primary-bgColor">
             <div class="flex flex-wrap items-center justify-between mx-auto p-4 w-full">
                 <div class="flex space-x-4">
                     <button data-collapse-toggle="navbar-solid" type="button"
@@ -27,7 +28,8 @@
                         </svg>
                     </button>
                     <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <span class="self-center text-xl text-dark-website-text font-semibold whitespace-nowrap">
+                        <span
+                            class="self-center text-xl text-light-website-text dark:text-dark-website-text font-semibold whitespace-nowrap">
                             BET365
                         </span>
                     </a>
@@ -56,7 +58,7 @@
 
                     <!-- <<=== MAIN = User Dropdown -->
                     <div id="userDropdown"
-                        class="hidden z-50 absolute right-0 mt-2 w-56 bg-dark-2 rounded-sm shadow shadow-theme-primary-bgColor border border-theme-primary-bgColor p-2 space-y-2">
+                        class="hidden z-50 absolute right-0 mt-2 w-56 bg-light-1 dark:bg-dark-1 rounded-sm shadow shadow-theme-primary-bgColor border border-theme-primary-bgColor p-2 space-y-2">
                         <div class="flex justify-between items-center">
                             <a href="profile.html" class="flex items-center space-x-2">
                                 <div>
@@ -66,10 +68,19 @@
                                     User
                                 </div>
                             </a>
+
+                            <button id="theme-toggle"
+                                class="bg-theme-primary-bgColor/80 text-theme-text w-7 h-7 cursor-pointer flex items-center justify-center rounded-full">
+                                <!-- Sun icon (visible only in light mode) -->
+                                <i id="icon-sun" class="bi bi-brightness-high text-lg"></i>
+
+                                <!-- Moon icon (visible only in dark mode) -->
+                                <i id="icon-moon" class="bi bi-moon text-lg hidden"></i>
+                            </button>
                         </div>
                         <div class="text-sm">
                             <div
-                                class="bg-dark-website-bgColor px-3 py-1 rounded-md divide-y divide-theme-primary-bgColor/30">
+                                class="bg-light-website-bgColor dark:bg-dark-website-bgColor px-3 py-1 rounded-md divide-y divide-theme-primary-bgColor/30">
                                 <div class="py-1 flex justify-between font-semibold">
                                     <span>Chips </span>
                                     <span class="text-green-500">
@@ -93,7 +104,7 @@
                         <ul class="text-sm divide-y divide-theme-primary-bgColor/30">
                             <li>
                                 <a href="acStatment.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-bank"></i>
                                     </span>
@@ -104,7 +115,7 @@
                             </li>
                             <li>
                                 <a href="pnlStatment.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-journal-text"></i>
                                     </span>
@@ -115,7 +126,7 @@
                             </li>
                             <li>
                                 <a href="editStack.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-layers"></i>
                                     </span>
@@ -126,7 +137,7 @@
                             </li>
                             <li>
                                 <a href="changePassword.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-key"></i>
                                     </span>
@@ -136,8 +147,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="rules.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                <a href="rules.html" class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-card-checklist"></i>
                                     </span>
@@ -157,20 +167,18 @@
                         <a href="index.html" class="block py-2 px-3 text-theme-primary-bgColor">Home</a>
                     </li>
                     <li>
-                        <a href="users.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Users</a>
+                        <a href="users.html" class="block py-2 px-3 hover:text-theme-primary-bgColor">Users</a>
                     </li>
                     <li>
-                        <a href="betHistory.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Bets</a>
+                        <a href="betHistory.html" class="block py-2 px-3 hover:text-theme-primary-bgColor">Bets</a>
                     </li>
                     <li>
-                        <a href="acGeneral.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Account General</a>
+                        <a href="acGeneral.html" class="block py-2 px-3 hover:text-theme-primary-bgColor">Account
+                            General</a>
                     </li>
                     <li>
                         <a href="settlement.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Settlement</a>
+                            class="block py-2 px-3 hover:text-theme-primary-bgColor">Settlement</a>
                     </li>
                 </ul>
                 <div class="px-2 py-2">
@@ -181,7 +189,8 @@
             </div>
         </nav>
 
-        <div class="mt-(--nav-height) px-1.5 py-2">
+        <div
+            class="mt-(--nav-height) px-1.5 py-2 bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text">
             <ul class="flex space-x-2 overflow-x-scroll scrollbar-none">
                 <li
                     class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer transition-all duration-300 ease-in-out bg-theme-primary-bgColor text-theme-text whitespace-nowrap animateText">
@@ -223,8 +232,8 @@
             </ul>
         </div>
 
-        <aside
-            class="hidden lg:block w-56 absolute z-10 mt-(--header-height) bg-dark-website-bgColor text-dark-website-text">
+        <aside class="hidden lg:block w-56 absolute z-10 mt-(--header-height) 
+            bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text">
             <div>
                 <ul class="px-1 py-2 space-y-2">
                     <li class="">
@@ -239,7 +248,7 @@
                                     stroke-width="2" d="m19 9-7 7-7-7" />
                             </svg>
                         </button>
-                        <div id="mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                        <div id="mega-menu-full-dropdown" class="shadow-xs bg-light-1 dark:bg-dark-1 rounded-xs mt-1">
                             <ul class="text-sm divide-y divideColor">
                                 <li>
                                     <button id="ipl-mega-menu-full-dropdown-button"
@@ -257,7 +266,7 @@
                                     </button>
                                     <div id="ipl-mega-menu-full-dropdown" class="">
                                         <ul
-                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            class="text-sm divide-y divideColor bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text my-1 rounded-xs mx-2">
                                             <li class="px-3 py-2 cursor-pointer">
                                                 Gujarat Titans V Chennai Super Kings
                                             </li>
@@ -294,7 +303,8 @@
                                     stroke-width="2" d="m19 9-7 7-7-7" />
                             </svg>
                         </button>
-                        <div id="football-mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                        <div id="football-mega-menu-full-dropdown"
+                            class="shadow-xs bg-light-1 dark:bg-dark-1 rounded-xs mt-1">
                             <ul class="text-sm divide-y divideColor">
                                 <li class="">
                                     <button id="UEFA-mega-menu-full-dropdown-button"
@@ -312,7 +322,7 @@
                                     </button>
                                     <div id="UEFA-mega-menu-full-dropdown" class="bg">
                                         <ul
-                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            class="text-sm divide-y divideColor bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text my-1 rounded-xs mx-2">
                                             <li class="px-3 py-2 cursor-pointer">
                                                 Abcd V Xyz
                                             </li>
@@ -349,7 +359,8 @@
                                     stroke-width="2" d="m19 9-7 7-7-7" />
                             </svg>
                         </button>
-                        <div id="baseball-mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                        <div id="baseball-mega-menu-full-dropdown"
+                            class="shadow-xs bg-light-1 dark:bg-dark-1 rounded-xs mt-1">
                             <ul class="text-sm divide-y divideColor">
                                 <li class="">
                                     <button id="bb-mega-menu-full-dropdown-button"
@@ -367,7 +378,7 @@
                                     </button>
                                     <div id="bb-mega-menu-full-dropdown" class="bg">
                                         <ul
-                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            class="text-sm divide-y divideColor bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text my-1 rounded-xs mx-2">
                                             <li class="px-3 py-2 cursor-pointer">
                                                 Abcd V Xyz
                                             </li>
@@ -397,7 +408,7 @@
     </header>
 
     <div class="space-y-2 pageContainer">
-        <div class='first:mb-1 not-first:my-1 bg-dark-1'>
+        <div class='first:mb-1 not-first:my-1 bg-light-1 dark:bg-dark-1'>
             <div
                 class='bg-theme-primary-bgColor text-theme-text py-1.5 px-1 first-letter:uppercase flex items-center justify-between cursor-pointer font-medium'>
                 <span>
@@ -459,6 +470,13 @@
         </div>
     </div>
 
+
+    <!-- <script src="./scripts/header.js"></script> -->
+
+    <script src="./scripts/theme.js"></script>
+    <script>
+        initThemeToggle()
+    </script>
 
     <script src="https://unpkg.com/flowbite@1.7.0/dist/flowbite.min.js"></script>
 </body>

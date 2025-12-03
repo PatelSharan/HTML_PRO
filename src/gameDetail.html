@@ -12,9 +12,10 @@
 </head>
 
 <body>
+    <!-- <div id="header"></div> -->
     <header class="flex flex-col">
         <nav
-            class="bg-dark-website-bgColor text-dark-website-text fixed w-full z-20 top-0 start-0 border-b border-theme-primary-bgColor">
+            class="bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text fixed w-full z-20 top-0 start-0 border-b border-theme-primary-bgColor">
             <div class="flex flex-wrap items-center justify-between mx-auto p-4 w-full">
                 <div class="flex space-x-4">
                     <button data-collapse-toggle="navbar-solid" type="button"
@@ -28,7 +29,8 @@
                         </svg>
                     </button>
                     <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <span class="self-center text-xl text-dark-website-text font-semibold whitespace-nowrap">
+                        <span
+                            class="self-center text-xl text-light-website-text dark:text-dark-website-text font-semibold whitespace-nowrap">
                             BET365
                         </span>
                     </a>
@@ -57,7 +59,7 @@
 
                     <!-- <<=== MAIN = User Dropdown -->
                     <div id="userDropdown"
-                        class="hidden z-50 absolute right-0 mt-2 w-56 bg-dark-2 rounded-sm shadow shadow-theme-primary-bgColor border border-theme-primary-bgColor p-2 space-y-2">
+                        class="hidden z-50 absolute right-0 mt-2 w-56 bg-light-1 dark:bg-dark-1 rounded-sm shadow shadow-theme-primary-bgColor border border-theme-primary-bgColor p-2 space-y-2">
                         <div class="flex justify-between items-center">
                             <a href="profile.html" class="flex items-center space-x-2">
                                 <div>
@@ -67,10 +69,19 @@
                                     User
                                 </div>
                             </a>
+
+                            <button id="theme-toggle"
+                                class="bg-theme-primary-bgColor/80 text-theme-text w-7 h-7 cursor-pointer flex items-center justify-center rounded-full">
+                                <!-- Sun icon (visible only in light mode) -->
+                                <i id="icon-sun" class="bi bi-brightness-high text-lg"></i>
+
+                                <!-- Moon icon (visible only in dark mode) -->
+                                <i id="icon-moon" class="bi bi-moon text-lg hidden"></i>
+                            </button>
                         </div>
                         <div class="text-sm">
                             <div
-                                class="bg-dark-website-bgColor px-3 py-1 rounded-md divide-y divide-theme-primary-bgColor/30">
+                                class="bg-light-website-bgColor dark:bg-dark-website-bgColor px-3 py-1 rounded-md divide-y divide-theme-primary-bgColor/30">
                                 <div class="py-1 flex justify-between font-semibold">
                                     <span>Chips </span>
                                     <span class="text-green-500">
@@ -94,7 +105,7 @@
                         <ul class="text-sm divide-y divide-theme-primary-bgColor/30">
                             <li>
                                 <a href="acStatment.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-bank"></i>
                                     </span>
@@ -105,7 +116,7 @@
                             </li>
                             <li>
                                 <a href="pnlStatment.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-journal-text"></i>
                                     </span>
@@ -116,7 +127,7 @@
                             </li>
                             <li>
                                 <a href="editStack.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-layers"></i>
                                     </span>
@@ -127,7 +138,7 @@
                             </li>
                             <li>
                                 <a href="changePassword.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                    class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-key"></i>
                                     </span>
@@ -137,8 +148,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="rules.html"
-                                    class="block py-2 px-2 text-white hover:text-theme-primary-bgColor space-x-2">
+                                <a href="rules.html" class="block py-2 px-2 hover:text-theme-primary-bgColor space-x-2">
                                     <span>
                                         <i class="bi bi-card-checklist"></i>
                                     </span>
@@ -158,20 +168,18 @@
                         <a href="index.html" class="block py-2 px-3 text-theme-primary-bgColor">Home</a>
                     </li>
                     <li>
-                        <a href="users.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Users</a>
+                        <a href="users.html" class="block py-2 px-3 hover:text-theme-primary-bgColor">Users</a>
                     </li>
                     <li>
-                        <a href="betHistory.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Bets</a>
+                        <a href="betHistory.html" class="block py-2 px-3 hover:text-theme-primary-bgColor">Bets</a>
                     </li>
                     <li>
-                        <a href="acGeneral.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Account General</a>
+                        <a href="acGeneral.html" class="block py-2 px-3 hover:text-theme-primary-bgColor">Account
+                            General</a>
                     </li>
                     <li>
                         <a href="settlement.html"
-                            class="block py-2 px-3 text-white hover:text-theme-primary-bgColor">Settlement</a>
+                            class="block py-2 px-3 hover:text-theme-primary-bgColor">Settlement</a>
                     </li>
                 </ul>
                 <div class="px-2 py-2">
@@ -182,7 +190,8 @@
             </div>
         </nav>
 
-        <div class="mt-(--nav-height) px-1.5 py-2">
+        <div
+            class="mt-(--nav-height) px-1.5 py-2 bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text">
             <ul class="flex space-x-2 overflow-x-scroll scrollbar-none">
                 <li
                     class="flex-1 text-center py-1.5 px-4 rounded-xs cursor-pointer transition-all duration-300 ease-in-out bg-theme-primary-bgColor text-theme-text whitespace-nowrap animateText">
@@ -224,8 +233,8 @@
             </ul>
         </div>
 
-        <aside
-            class="hidden lg:block w-56 absolute z-10 mt-(--header-height) bg-dark-website-bgColor text-dark-website-text">
+        <aside class="hidden lg:block w-56 absolute z-10 mt-(--header-height) 
+            bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text">
             <div>
                 <ul class="px-1 py-2 space-y-2">
                     <li class="">
@@ -240,7 +249,7 @@
                                     stroke-width="2" d="m19 9-7 7-7-7" />
                             </svg>
                         </button>
-                        <div id="mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                        <div id="mega-menu-full-dropdown" class="shadow-xs bg-light-1 dark:bg-dark-1 rounded-xs mt-1">
                             <ul class="text-sm divide-y divideColor">
                                 <li>
                                     <button id="ipl-mega-menu-full-dropdown-button"
@@ -258,7 +267,7 @@
                                     </button>
                                     <div id="ipl-mega-menu-full-dropdown" class="">
                                         <ul
-                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            class="text-sm divide-y divideColor bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text my-1 rounded-xs mx-2">
                                             <li class="px-3 py-2 cursor-pointer">
                                                 Gujarat Titans V Chennai Super Kings
                                             </li>
@@ -295,7 +304,8 @@
                                     stroke-width="2" d="m19 9-7 7-7-7" />
                             </svg>
                         </button>
-                        <div id="football-mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                        <div id="football-mega-menu-full-dropdown"
+                            class="shadow-xs bg-light-1 dark:bg-dark-1 rounded-xs mt-1">
                             <ul class="text-sm divide-y divideColor">
                                 <li class="">
                                     <button id="UEFA-mega-menu-full-dropdown-button"
@@ -313,7 +323,7 @@
                                     </button>
                                     <div id="UEFA-mega-menu-full-dropdown" class="bg">
                                         <ul
-                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            class="text-sm divide-y divideColor bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text my-1 rounded-xs mx-2">
                                             <li class="px-3 py-2 cursor-pointer">
                                                 Abcd V Xyz
                                             </li>
@@ -350,7 +360,8 @@
                                     stroke-width="2" d="m19 9-7 7-7-7" />
                             </svg>
                         </button>
-                        <div id="baseball-mega-menu-full-dropdown" class="shadow-xs bg-dark-1 rounded-xs mt-1">
+                        <div id="baseball-mega-menu-full-dropdown"
+                            class="shadow-xs bg-light-1 dark:bg-dark-1 rounded-xs mt-1">
                             <ul class="text-sm divide-y divideColor">
                                 <li class="">
                                     <button id="bb-mega-menu-full-dropdown-button"
@@ -368,7 +379,7 @@
                                     </button>
                                     <div id="bb-mega-menu-full-dropdown" class="bg">
                                         <ul
-                                            class="text-sm divide-y divideColor bg-dark-website-bgColor text-dark-website-text my-1 rounded-xs mx-2">
+                                            class="text-sm divide-y divideColor bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text my-1 rounded-xs mx-2">
                                             <li class="px-3 py-2 cursor-pointer">
                                                 Abcd V Xyz
                                             </li>
@@ -403,7 +414,7 @@
             <div class="space-y-1.5 pb-1.5 flex-1 w-full">
 
                 <!-- <<=== MAIN = Heading -->
-                <div class='bg-dark-1 py-1.5 px-2 flex gap-2 rounded-sm'>
+                <div class='bg-light-1 dark:bg-dark-1 py-1.5 px-2 flex gap-2 rounded-sm'>
                     <div class="hidden md:flex items-center justify-center uppercase">
                         <button class="w-6 h-6 bg-theme-primary-bgColor text-theme-text rounded-full z-10">
                             I
@@ -450,7 +461,7 @@
                 </div>
 
                 <!-- <<=== MAIN = Combo Book -->
-                <div class="bg-dark-1">
+                <div class="bg-light-1 dark:bg-dark-1">
                     <div class="p-2 themeBg text-sm flex justify-between items-center cursor-pointer">
                         <div class="font-semibold">
                             Combo Book
@@ -489,7 +500,7 @@
 
 
                 <!-- <<=== MAIN = MatchOdds Table -->
-                <div class='bg-dark-1'>
+                <div class='bg-light-1 dark:bg-dark-1'>
                     <div class='themeBg font-semibold flex justify-between items-center'>
                         <div
                             class='py-1 px-2 flex items-center justify-between md:justify-start w-full md:w-[40%] gap-2'>
@@ -604,7 +615,7 @@
                     </div>
 
                     <!-- <<=== MAIN = betslip -->
-                    <div class='border-[1.5px] borderColor p-2 bg-dark-2 space-y-2'>
+                    <div class='border border-theme-primary-bgColor p-2 bg-light-2 dark:bg-dark-2 space-y-2'>
                         <div
                             class='flex items-center justify-start text-sm gap-1 bg-primary-bgColor text-primary-color py-0.5 px-1.5 rounded-sm'>
                             <span>
@@ -714,7 +725,7 @@
                 </div>
 
                 <!-- <<=== MAIN = Fancy Table -->
-                <div class='bg-dark-1 my-1'>
+                <div class='bg-light-1 dark:bg-dark-1 my-1'>
                     <div class='themeBg text-sm py-1 px-2 flex items-center justify-between'>
                         <span class='font-semibold'>
                             Fancy
@@ -769,31 +780,14 @@
                                     </span>
                                 </div>
                                 <div class='flex items-center justify-end w-full space-x-2'>
-                                    <div class='flex items-center space-x-2'>
-                                        <button
-                                            class='bg-theme-primary-bgColor text-theme-text w-5 h-5 px-0 rounded-sm text-xs cursor-pointer'>
-                                            B
-                                        </button>
-                                    </div>
-                                    <div class='flex items-center space-x-2'>
-                                        <button class='w-5 h-5 rounded-sm bg-green-500 text-black cursor-pointer'>
-                                            <i class="bi bi-unlock2-fill"></i>
-                                        </button>
-                                    </div>
-                                    <div class='flex items-center space-x-2'>
-                                        <button class='w-5 h-5 rounded-sm bg-green-500 text-black cursor-pointer'>
-                                            <i class="bi bi-gear-fill"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="flex space-x-1 items-center">
+                                    <div class="flex space-x-1 items-end">
                                         <div class='text-2xs'>
                                             <span>Min: </span>
                                             <span>
                                                 100
                                             </span>
                                         </div>
-                                        <span> | </span>
+                                        <div> | </div>
                                         <div class='text-2xs'>
                                             <span>Max: </span>
                                             <span>
@@ -826,6 +820,25 @@
                                     1300
                                 </span>
                             </button>
+
+                            <div class="w-1/3 py-1 flex items-center justify-center gap-2">
+                                <div class='flex items-center space-x-2'>
+                                    <button
+                                        class='bg-theme-primary-bgColor text-theme-text w-6 h-6 px-0 rounded-sm text-xs cursor-pointer'>
+                                        B
+                                    </button>
+                                </div>
+                                <div class='flex items-center space-x-2'>
+                                    <button class='w-6 h-6 rounded-sm bg-green-500 text-black cursor-pointer'>
+                                        <i class="bi bi-unlock2-fill"></i>
+                                    </button>
+                                </div>
+                                <div class='flex items-center space-x-2'>
+                                    <button class='w-6 h-6 rounded-sm bg-green-500 text-black cursor-pointer'>
+                                        <i class="bi bi-gear-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class='flex flex-col items-center justify-between border-b borderColor'>
@@ -844,31 +857,14 @@
                                     </span>
                                 </div>
                                 <div class='flex items-center justify-end w-full space-x-2'>
-                                    <div class='flex items-center space-x-2'>
-                                        <button
-                                            class='bg-theme-primary-bgColor text-theme-text w-5 h-5 px-0 rounded-sm text-xs cursor-pointer'>
-                                            B
-                                        </button>
-                                    </div>
-                                    <div class='flex items-center space-x-2'>
-                                        <button class='w-5 h-5 rounded-sm bg-green-500 text-black cursor-pointer'>
-                                            <i class="bi bi-unlock2-fill"></i>
-                                        </button>
-                                    </div>
-                                    <div class='flex items-center space-x-2'>
-                                        <button class='w-5 h-5 rounded-sm bg-green-500 text-black cursor-pointer'>
-                                            <i class="bi bi-gear-fill"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="flex space-x-1 items-center">
+                                    <div class="flex space-x-1 items-end">
                                         <div class='text-2xs'>
                                             <span>Min: </span>
                                             <span>
                                                 100
                                             </span>
                                         </div>
-                                        <span> | </span>
+                                        <div> | </div>
                                         <div class='text-2xs'>
                                             <span>Max: </span>
                                             <span>
@@ -901,6 +897,25 @@
                                     1300
                                 </span>
                             </button>
+
+                            <div class="w-1/3 py-1 flex items-center justify-center gap-2">
+                                <div class='flex items-center space-x-2'>
+                                    <button
+                                        class='bg-theme-primary-bgColor text-theme-text w-6 h-6 px-0 rounded-sm text-xs cursor-pointer'>
+                                        B
+                                    </button>
+                                </div>
+                                <div class='flex items-center space-x-2'>
+                                    <button class='w-6 h-6 rounded-sm bg-green-500 text-black cursor-pointer'>
+                                        <i class="bi bi-unlock2-fill"></i>
+                                    </button>
+                                </div>
+                                <div class='flex items-center space-x-2'>
+                                    <button class='w-6 h-6 rounded-sm bg-green-500 text-black cursor-pointer'>
+                                        <i class="bi bi-gear-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class='flex flex-col items-center justify-between border-b borderColor'>
@@ -919,31 +934,14 @@
                                     </span>
                                 </div>
                                 <div class='flex items-center justify-end w-full space-x-2'>
-                                    <div class='flex items-center space-x-2'>
-                                        <button
-                                            class='bg-theme-primary-bgColor text-theme-text w-5 h-5 px-0 rounded-sm text-xs cursor-pointer'>
-                                            B
-                                        </button>
-                                    </div>
-                                    <div class='flex items-center space-x-2'>
-                                        <button class='w-5 h-5 rounded-sm bg-green-500 text-black cursor-pointer'>
-                                            <i class="bi bi-unlock2-fill"></i>
-                                        </button>
-                                    </div>
-                                    <div class='flex items-center space-x-2'>
-                                        <button class='w-5 h-5 rounded-sm bg-green-500 text-black cursor-pointer'>
-                                            <i class="bi bi-gear-fill"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="flex space-x-1 items-center">
+                                    <div class="flex space-x-1 items-end">
                                         <div class='text-2xs'>
                                             <span>Min: </span>
                                             <span>
                                                 100
                                             </span>
                                         </div>
-                                        <span> | </span>
+                                        <div> | </div>
                                         <div class='text-2xs'>
                                             <span>Max: </span>
                                             <span>
@@ -976,6 +974,25 @@
                                     1300
                                 </span>
                             </button>
+
+                            <div class="w-1/3 py-1 flex items-center justify-center gap-2">
+                                <div class='flex items-center space-x-2'>
+                                    <button
+                                        class='bg-theme-primary-bgColor text-theme-text w-6 h-6 px-0 rounded-sm text-xs cursor-pointer'>
+                                        B
+                                    </button>
+                                </div>
+                                <div class='flex items-center space-x-2'>
+                                    <button class='w-6 h-6 rounded-sm bg-green-500 text-black cursor-pointer'>
+                                        <i class="bi bi-unlock2-fill"></i>
+                                    </button>
+                                </div>
+                                <div class='flex items-center space-x-2'>
+                                    <button class='w-6 h-6 rounded-sm bg-green-500 text-black cursor-pointer'>
+                                        <i class="bi bi-gear-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Betslio here -->
@@ -1011,7 +1028,8 @@
                     </span>
                 </div>
                 <div class="relative overflow-x-auto scrollbar-none shadow-xs rounded-xs border borderColor">
-                    <table class="w-full text-sm text-left rtl:text-right bg-dark-1 text-dark-website-text">
+                    <table
+                        class="w-full text-sm text-left rtl:text-right bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text">
                         <thead
                             class="text-sm bg-theme-primary-bgColor text-theme-text border-b rounded-base borderColor">
                             <tr>
@@ -1036,7 +1054,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-dark-website-text border-b borderColor">
+                            <tr class="text-light-website-text dark:text-dark-website-text border-b borderColor">
                                 <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">
                                     Matchodds
                                 </th>
@@ -1056,7 +1074,7 @@
                                     12 Nov, 2025 11:59 pm
                                 </td>
                             </tr>
-                            <tr class="text-dark-website-text border-b borderColor">
+                            <tr class="text-light-website-text dark:text-dark-website-text border-b borderColor">
                                 <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">
                                     Matchodds
                                 </th>
@@ -1076,7 +1094,7 @@
                                     12 Nov, 2025 11:59 pm
                                 </td>
                             </tr>
-                            <tr class="text-dark-website-text border-b borderColor">
+                            <tr class="text-light-website-text dark:text-dark-website-text border-b borderColor">
                                 <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">
                                     Matchodds
                                 </th>
@@ -1103,6 +1121,14 @@
             </div>
         </div>
     </div>
+
+
+    <!-- <script src="./scripts/header.js"></script> -->
+
+    <script src="./scripts/theme.js"></script>
+    <script>
+        initThemeToggle()
+    </script>
 
     <script src="https://unpkg.com/flowbite@1.7.0/dist/flowbite.min.js"></script>
 </body>

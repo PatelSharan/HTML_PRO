@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @import "flowbite/src/themes/default";
 
 @plugin "flowbite/plugin";
@@ -20,18 +22,23 @@
 
     --color-theme-text: #20204e;
 
+    --color-light-website-bgColor: #ffffff;
     --color-dark-website-bgColor: #131340;
+
+    --color-light-1: #f7f7f7;
+    --color-light-2: #eaeaea;
 
     --color-dark-1: #20204e;
     --color-dark-2: #272760;
 
+    --color-light-website-text: #000000;
     --color-dark-website-text: #ffffff;
 }
 
 @layer components {
 
     body {
-        @apply bg-dark-website-bgColor text-dark-website-text
+        @apply bg-light-website-bgColor text-light-website-text dark:bg-dark-website-bgColor dark:text-dark-website-text
     }
 
     .pageContainer {

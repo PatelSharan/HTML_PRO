@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div class="flex space-x-2 relative">
-                    <div
+                    <div data-modal-target="exposure-modal" data-modal-toggle="exposure-modal"
                         class="text-xs py-0.5 px-3 text rounded-xs cursor-pointer flex flex-col items-center justify-center border border-theme-primary-bgColor bg-linear-to-r from-theme-primary-bgColor/10 to-theme-primary-bgColor/30
                         hover:from-theme-primary-bgColor/20 hover:to-theme-primary-bgColor/40  transition-all duration-300 ease-in-out whitespace-nowrap">
                         <div>
@@ -405,6 +405,78 @@
                 </ul>
             </div>
         </aside>
+
+        <!-- MAIN = Exposure Modal -->
+        <div id="exposure-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            All Event Exposure
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="exposure-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2">
+                        <div class="relative overflow-x-auto scrollbar-none shadow-xs rounded-xs border borderColor">
+                            <table
+                                class="w-full text-sm text-left rtl:text-right bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text">
+                                <thead
+                                    class="text-sm bg-theme-primary-bgColor text-theme-text border-b rounded-base borderColor">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Game
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Event Name
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Exposure
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Trades
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b borderColor">
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            CRICKET
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <a href="gameDetail.html">
+                                                <span class="underline">
+                                                    India V England
+                                                </span>
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center text-green-500">
+                                            1000
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            2
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
 
@@ -426,7 +498,7 @@
                 </div>
             </form>
             <div>
-                <button type="button" title='Add User'
+                <button data-modal-target="add-modal" data-modal-toggle="add-modal" type="button" title='Add User'
                     class="p-1 px-2 bg-theme-primary-bgColor text-theme-text text-xl flex items-center justify-center rounded-xs hover:bg-theme-primary-bgColor/90 cursor-pointer">
                     <i class="bi bi-plus-square"></i>
                 </button>
@@ -523,174 +595,30 @@
                         </td>
                         <td class="px-6 py-2 whitespace-nowrap">
                             <div class="flex gap-1.5">
-                                <button class="btnTheme rounded-full flex items-center justify-center">
+                                <button data-modal-target="edit-modal" data-modal-toggle="edit-modal"
+                                    class="btnTheme rounded-full flex items-center justify-center">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
+                                <button data-modal-target="deposit-modal" data-modal-toggle="deposit-modal"
+                                    class="btnTheme rounded-full flex items-center justify-center">
                                     D
                                 </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
+                                <button data-modal-target="withdraw-modal" data-modal-toggle="withdraw-modal"
+                                    class="btnTheme rounded-full flex items-center justify-center">
                                     W
                                 </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
+                                <button data-modal-target="mode-modal" data-modal-toggle="mode-modal"
+                                    class="btnTheme rounded-full flex items-center justify-center">
                                     MODE
                                 </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
+                                <button data-modal-target="market-setting-modal"
+                                    data-modal-toggle="market-setting-modal"
+                                    class="btnTheme rounded-full flex items-center justify-center">
                                     MS
                                 </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    <i class="bi bi-key-fill"></i>
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center bg-red-500">
-                                    <i class="bi bi-trash3-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b borderColor">
-                        <!-- <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">
-                            <button
-                                class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text rounded-full w-5 h-5 px-0 flex items-center justify-center cursor-pointer">
-                                <i class="bi bi-arrow-right"></i>
-                            </button>
-                        </th> -->
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <span class="cursor-pointer underline">
-                                Admin_2
-                            </span>
-                        </td>
-                        <td class="px-6 py-2  whitespace-nowrap text-red-500">
-                            -100
-                        </td>
-                        <td class="px-6 py-2  whitespace-nowrap text-green-500">
-                            80
-                        </td>
-                        <td class="px-6 py-2  whitespace-nowrap">
-                            20000
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div
-                                    class="relative w-9 h-5 bg-theme-primary-bgColor/50  rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-0.5 after:start-0.5 after:bg-theme-text after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-theme-primary-bgColor">
-                                </div>
-                            </label>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div
-                                    class="relative w-9 h-5 bg-theme-primary-bgColor/50  rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-0.5 after:start-0.5 after:bg-theme-text after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-theme-primary-bgColor">
-                                </div>
-                            </label>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" checked class="sr-only peer">
-                                <div
-                                    class="relative w-9 h-5 bg-theme-primary-bgColor/50  rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-0.5 after:start-0.5 after:bg-theme-text after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-theme-primary-bgColor">
-                                </div>
-                            </label>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <button class="btnTheme rounded-full text-sm">
-                                A/C
-                            </button>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <div class="flex gap-1.5">
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    D
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    W
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    MODE
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    MS
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    <i class="bi bi-key-fill"></i>
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center bg-red-500">
-                                    <i class="bi bi-trash3-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b borderColor">
-                        <!-- <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap">
-                            <button
-                                class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text rounded-full w-5 h-5 px-0 flex items-center justify-center cursor-pointer">
-                                <i class="bi bi-arrow-right"></i>
-                            </button>
-                        </th> -->
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <span class="cursor-pointer underline">
-                                Master_1
-                            </span>
-                        </td>
-                        <td class="px-6 py-2  whitespace-nowrap text-green-500">
-                            10000
-                        </td>
-                        <td class="px-6 py-2  whitespace-nowrap text-red-500">
-                            8000
-                        </td>
-                        <td class="px-6 py-2  whitespace-nowrap">
-                            2000000
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div
-                                    class="relative w-9 h-5 bg-theme-primary-bgColor/50  rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-0.5 after:start-0.5 after:bg-theme-text after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-theme-primary-bgColor">
-                                </div>
-                            </label>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div
-                                    class="relative w-9 h-5 bg-theme-primary-bgColor/50  rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-0.5 after:start-0.5 after:bg-theme-text after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-theme-primary-bgColor">
-                                </div>
-                            </label>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" checked class="sr-only peer">
-                                <div
-                                    class="relative w-9 h-5 bg-theme-primary-bgColor/50  rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-0.5 after:start-0.5 after:bg-theme-text after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-theme-primary-bgColor">
-                                </div>
-                            </label>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <button class="btnTheme rounded-full text-sm">
-                                A/C
-                            </button>
-                        </td>
-                        <td class="px-6 py-2 whitespace-nowrap">
-                            <div class="flex gap-1.5">
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    D
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    W
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    MODE
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
-                                    MS
-                                </button>
-                                <button class="btnTheme rounded-full flex items-center justify-center">
+                                <button data-modal-target="change-password-modal"
+                                    data-modal-toggle="change-password-modal"
+                                    class="btnTheme rounded-full flex items-center justify-center">
                                     <i class="bi bi-key-fill"></i>
                                 </button>
                                 <button class="btnTheme rounded-full flex items-center justify-center bg-red-500">
@@ -701,6 +629,714 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- MAIN = Add Modal -->
+        <div id="add-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            ADD New User
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="add-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2 space-y-3">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="flex flex-col relative">
+                                <label for="FromDate"
+                                    class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                    First Name
+                                </label>
+                                <input type="text" placeholder="Enter First Name"
+                                    class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                            </div>
+                            <div class="flex flex-col relative">
+                                <label for="FromDate"
+                                    class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                    User Name
+                                </label>
+                                <input type="text" placeholder="Enter User Name"
+                                    class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                            </div>
+                            <div class="flex flex-col relative">
+                                <label for="FromDate"
+                                    class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                    Password
+                                </label>
+                                <input type="password" placeholder="Enter Password"
+                                    class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                            </div>
+                            <div class="flex flex-col relative">
+                                <label for="FromDate"
+                                    class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                    Confirm password
+                                </label>
+                                <input type="password" placeholder="Enter Confirm Password"
+                                    class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                            </div>
+                            <div class="flex flex-col relative">
+                                <label for="FromDate"
+                                    class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">Role</label>
+                                <select name="sports" id="sports"
+                                    class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                                    <option value="" class="bg-light-1 dark:bg-dark-1">
+                                        Select Any
+                                    </option>
+                                    <option value="" class="bg-light-1 dark:bg-dark-1">
+                                        ADMIN
+                                    </option>
+                                    <option value="cricket" class="bg-light-1 dark:bg-dark-1">
+                                        SUPER MASTER
+                                    </option>
+                                    <option value="soccer" class="bg-light-1 dark:bg-dark-1">
+                                        MASTER
+                                    </option>
+                                    <option value="baseball" class="bg-light-1 dark:bg-dark-1">
+                                        USER
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col relative">
+                                <label for="FromDate"
+                                    class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                    No. of login
+                                </label>
+                                <input type="number" placeholder="Enter No. of login"
+                                    class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                            </div>
+                            <div class="flex flex-col relative">
+                                <label for="FromDate"
+                                    class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                    Deposit
+                                </label>
+                                <input type="number" placeholder="Enter Deposit Amount"
+                                    class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                            </div>
+                        </div>
+                        <div class="relative overflow-x-auto scrollbar-none shadow-xs rounded-xs border borderColor">
+                            <table
+                                class="w-full text-sm text-left rtl:text-right bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text">
+                                <thead
+                                    class="text-sm bg-theme-primary-bgColor text-theme-text border-b rounded-base borderColor">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Type
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Game
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Upline
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Downline
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Remain
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            CRICKET
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            FOOTBALL
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            BASEBALL
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            CASINO
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center justify-end space-x-2 pt-2 md:pt-2">
+                        <button data-modal-hide="add-modal" type="button"
+                            class="bg-red-500 hover:bg-red-500/90 text-white cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Cancle
+                        </button>
+                        <button data-modal-hide="add-modal" type="button"
+                            class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN = Edit Modal -->
+        <div id="edit-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            Edit User
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="edit-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2 grid grid-cols-2 gap-2">
+                        <div class="flex flex-col relative">
+                            <label for="FromDate"
+                                class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">First Name</label>
+                            <input type="text" class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate"
+                                class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">No Of
+                                Login</label>
+                            <input type="number" class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center justify-end space-x-2 pt-2 md:pt-2">
+                        <button data-modal-hide="edit-modal" type="button"
+                            class="bg-red-500 hover:bg-red-500/90 text-white cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Cancle
+                        </button>
+                        <button data-modal-hide="edit-modal" type="button"
+                            class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN = Deposit Modal -->
+        <div id="deposit-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            Deposit To User
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="deposit-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2 grid grid-cols-1 gap-2">
+                        <div class="flex flex-col relative">
+                            <label for="FromDate"
+                                class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">Deposit
+                                Amount</label>
+                            <input type="number" class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center justify-end space-x-2 pt-2 md:pt-2">
+                        <button data-modal-hide="deposit-modal" type="button"
+                            class="bg-red-500 hover:bg-red-500/90 text-white cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Cancle
+                        </button>
+                        <button data-modal-hide="deposit-modal" type="button"
+                            class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN = Withdraw Modal -->
+        <div id="withdraw-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            Withdraw From User
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="withdraw-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2 grid grid-cols-1 gap-2">
+                        <div class="flex flex-col relative">
+                            <label for="FromDate"
+                                class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">Withdraw
+                                Amount</label>
+                            <input type="number" class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center justify-end space-x-2 pt-2 md:pt-2">
+                        <button data-modal-hide="withdraw-modal" type="button"
+                            class="bg-red-500 hover:bg-red-500/90 text-white cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Cancle
+                        </button>
+                        <button data-modal-hide="withdraw-modal" type="button"
+                            class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN = Mode Modal -->
+        <div id="mode-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            Mode For User
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="mode-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2 grid grid-cols-1 gap-2">
+                        <div class="relative overflow-x-auto scrollbar-none shadow-xs rounded-xs border borderColor">
+                            <table
+                                class="w-full text-sm text-left rtl:text-right bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text">
+                                <thead
+                                    class="text-sm bg-theme-primary-bgColor text-theme-text border-b rounded-base borderColor">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Type
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Game
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Upline
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Downline
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Remain
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            CRICKET
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            FOOTBALL
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            BASEBALL
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b borderColor">
+                                        <th scope="row" class="px-6 py-2 font-medium whitespace-nowrap text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </th>
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            CASINO
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            60
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <input type="number"
+                                                class="bg-light-2 text-light-website-text dark:bg-dark-2 dark:text-dark-website-text rounded-md text-center border borderColor">
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            40
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center justify-end space-x-2 pt-2 md:pt-2">
+                        <button data-modal-hide="mode-modal" type="button"
+                            class="bg-red-500 hover:bg-red-500/90 text-white cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Cancle
+                        </button>
+                        <button data-modal-hide="mode-modal" type="button"
+                            class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN = Market-Setting Modal -->
+        <div id="market-setting-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            Market Setting For User
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="market-setting-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2 grid grid-cols-2 gap-3">
+                        <div class="flex flex-col relative">
+                            <label for="FromDate"
+                                class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">Game</label>
+                            <select name="sports" id="sports"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                                <option value="" class="bg-light-1 dark:bg-dark-1">
+                                    Select Any
+                                </option>
+                                <option value="" class="bg-light-1 dark:bg-dark-1">
+                                    Cricket
+                                </option>
+                                <option value="cricket" class="bg-light-1 dark:bg-dark-1">
+                                    Football
+                                </option>
+                                <option value="soccer" class="bg-light-1 dark:bg-dark-1">
+                                    Baseball
+                                </option>
+                                <option value="baseball" class="bg-light-1 dark:bg-dark-1">
+                                    Casino
+                                </option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate"
+                                class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">Market</label>
+                            <select name="sports" id="sports"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                                <option value="" class="bg-light-1 dark:bg-dark-1">
+                                    Select Any
+                                </option>
+                                <option value="" class="bg-light-1 dark:bg-dark-1">
+                                    MatchOdds
+                                </option>
+                                <option value="cricket" class="bg-light-1 dark:bg-dark-1">
+                                    Bookmaker
+                                </option>
+                                <option value="soccer" class="bg-light-1 dark:bg-dark-1">
+                                    Fancy
+                                </option>
+                                <option value="baseball" class="bg-light-1 dark:bg-dark-1">
+                                    Line
+                                </option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Minimum Bet
+                            </label>
+                            <input type="number" placeholder="Enter Minimum Bet"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Maximum Bet
+                            </label>
+                            <input type="number" placeholder="Enter Maximum Bet"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Maximum Profit
+                            </label>
+                            <input type="number" placeholder="Enter Maximum Profit"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Maximum Market Profit
+                            </label>
+                            <input type="number" placeholder="Enter Maximum Market Profit"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Maximum Liability
+                            </label>
+                            <input type="number" placeholder="Enter Maximum Liability"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Maximum Market Liability
+                            </label>
+                            <input type="number" placeholder="Enter Maximum Market Liability"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Net Profit Commission In
+                            </label>
+                            <input type="number" placeholder="Enter Net Profit Commission In"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Net Loss Commission Out
+                            </label>
+                            <input type="number" placeholder="Enter Net Loss Commission Out"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Entry Wise Commission Out
+                            </label>
+                            <input type="number" placeholder="Enter Entry Wise Commission Out"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Entry Loss Commission Out
+                            </label>
+                            <input type="number" placeholder="Enter Entry Loss Commission Out"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center justify-end space-x-2 pt-2 md:pt-2">
+                        <button data-modal-hide="market-setting-modal" type="button"
+                            class="bg-red-500 hover:bg-red-500/90 text-white cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Cancle
+                        </button>
+                        <button data-modal-hide="market-setting-modal" type="button"
+                            class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN = Change-Password Modal -->
+        <div id="change-password-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            Change Password Of User
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="change-password-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2 grid grid-cols-2 gap-3">
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Password
+                            </label>
+                            <input type="password" placeholder="Enter Password"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label for="FromDate" class="text-xs absolute -top-2 left-3 bg-light-1 dark:bg-dark-1 px-1">
+                                Confirm password
+                            </label>
+                            <input type="password" placeholder="Enter Confirm Password"
+                                class="bg-transparent border border-theme-primary-bgColor rounded-md">
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center justify-end space-x-2 pt-2 md:pt-2">
+                        <button data-modal-hide="change-password-modal" type="button"
+                            class="bg-red-500 hover:bg-red-500/90 text-white cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Cancle
+                        </button>
+                        <button data-modal-hide="change-password-modal" type="button"
+                            class="bg-theme-primary-bgColor hover:bg-theme-primary-bgColor/90 text-theme-text cursor-pointer rounded-xs font-medium text-sm px-4 py-2 w-28 focus:outline-none">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

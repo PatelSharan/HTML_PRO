@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div class="flex space-x-2 relative">
-                    <div
+                    <div data-modal-target="exposure-modal" data-modal-toggle="exposure-modal"
                         class="text-xs py-0.5 px-3 text rounded-xs cursor-pointer flex flex-col items-center justify-center border border-theme-primary-bgColor bg-linear-to-r from-theme-primary-bgColor/10 to-theme-primary-bgColor/30
                         hover:from-theme-primary-bgColor/20 hover:to-theme-primary-bgColor/40  transition-all duration-300 ease-in-out whitespace-nowrap">
                         <div>
@@ -405,8 +405,79 @@
                 </ul>
             </div>
         </aside>
-    </header>
 
+        <!-- MAIN = Exposure Modal -->
+        <div id="exposure-modal" tabindex="-1" aria-hidden="true"
+            class="hidden bg-black/20 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full items-start justify-center md:inset-0 h-screen max-h-full">
+            <div class="relative p-2 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text border border-theme-primary-bgColor rounded-xs shadow-sm p-4 md:p-4">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between pb-3 md:pb-3">
+                        <h3 class="text-lg font-medium text-heading">
+                            All Event Exposure
+                        </h3>
+                        <button type="button"
+                            class="hover:bg-red-500/80 hover:text-white  cursor-pointer rounded-xs text-sm w-6 h-6 ms-auto inline-flex justify-center items-center"
+                            data-modal-hide="exposure-modal">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="py-2 md:py-2">
+                        <div class="relative overflow-x-auto scrollbar-none shadow-xs rounded-xs border borderColor">
+                            <table
+                                class="w-full text-sm text-left rtl:text-right bg-light-1 text-light-website-text dark:bg-dark-1 dark:text-dark-website-text">
+                                <thead
+                                    class="text-sm bg-theme-primary-bgColor text-theme-text border-b rounded-base borderColor">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Game
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Event Name
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Exposure
+                                        </th>
+                                        <th scope="col" class="px-6 py-1 font-medium whitespace-nowrap text-center">
+                                            Trades
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b borderColor">
+                                        <td class="px-6 py-2 whitespace-nowrap text-center">
+                                            CRICKET
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            <a href="gameDetail.html">
+                                                <span class="underline">
+                                                    India V England
+                                                </span>
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center text-green-500">
+                                            1000
+                                        </td>
+                                        <td class="px-6 py-2  whitespace-nowrap text-center">
+                                            2
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div class="space-y-2 pageContainer flex items-center justify-center">
         <div class="md:w-[50vw] py-5">
